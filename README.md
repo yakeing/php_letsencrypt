@@ -17,16 +17,16 @@ Supporting RSA ECC
 
 ### Packagist badge
 
-[![Version](http://img.shields.io/packagist/v/yakeing/php_letsencrypt.svg)](https://github.com/yakeing/php_letsencrypt/releases)
+[![Version](http://img.shields.io/packagist/v/yakeing/php_letsencrypt.svg)](../../releases)
 [![Downloads](http://img.shields.io/packagist/dt/yakeing/php_letsencrypt.svg)](https://packagist.org/packages/yakeing/php_letsencrypt/dependents)
 
 ### Github badge
 
-[![Downloads](https://img.shields.io/github/downloads/yakeing/php_letsencrypt/total.svg)](https://github.com/yakeing/php_letsencrypt)
-[![Size](https://img.shields.io/github/size/yakeing/php_letsencrypt/src/Letsencrypt.php.svg)](https://github.com/yakeing/php_letsencrypt/blob/master/src/letsencrypt.php)
-[![tag](https://oauth.applinzi.com/Label/tag/v3.0.0/28a745.svg)](https://github.com/yakeing/php_letsencrypt/releases)
-[![license](https://oauth.applinzi.com/Label/license/MPL-2.0/FE7D37.svg)](https://github.com/yakeing/php_letsencrypt/blob/master/LICENSE)
-[![languages](https://oauth.applinzi.com/Label/languages/php/007EC6.svg)](https://github.com/yakeing/php_letsencrypt/search?l=php)
+[![Downloads](https://img.shields.io/github/downloads/yakeing/php_letsencrypt/total.svg)](../../)
+[![Size](https://img.shields.io/github/size/yakeing/php_letsencrypt/src/Letsencrypt.php.svg)](src/Letsencrypt.php)
+[![tag](https://oauth.applinzi.com/Label/tag/v3.0.0/28a745.svg)](../../releases)
+[![license](https://oauth.applinzi.com/Label/license/MPL-2.0/FE7D37.svg)](LICENSE)
+[![languages](https://oauth.applinzi.com/Label/languages/php/007EC6.svg)](../../search?l=php)
 
 ### Installation
 
