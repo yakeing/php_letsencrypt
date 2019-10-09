@@ -23,7 +23,7 @@ Supporting RSA ECC
 ### Github badge
 
 [![Downloads](https://img.shields.io/github/downloads/yakeing/php_letsencrypt/total.svg)](../../)
-[![Size](https://img.shields.io/github/size/yakeing/php_letsencrypt/src/Letsencrypt.php.svg)](src/Letsencrypt.php)
+[![Size](https://oauth.applinzi.com/Label/size/19.1KB/b36d41.svg)](src/Letsencrypt.php)
 [![tag](https://oauth.applinzi.com/Label/tag/v3.0.0/28a745.svg)](../../releases)
 [![license](https://oauth.applinzi.com/Label/license/MPL-2.0/FE7D37.svg)](LICENSE)
 [![languages](https://oauth.applinzi.com/Label/languages/php/007EC6.svg)](../../search?l=php)
