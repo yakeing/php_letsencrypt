@@ -64,7 +64,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $userinfo = array('mailto:yakeing@github.com');
 
     $le->NewAccount($accountKey, $userinfo);
@@ -75,7 +76,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $domain = 'example.com';
     $kid = $option['kid']; //12345
     $type = 'dns';
@@ -104,7 +106,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $token = $option['token']; //gDhhgh5Sdgf......fGDB0ceWadfg
 
     $ret = $le->GetDnsTxt($accountKey, $token);
@@ -115,7 +118,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $kid = $option['kid']; //12345
     $url = $option['url']; //https://~.api.letsencrypt.org/acme/authz-v3/*****
     $token = $option['token']; //gDhhgh5Sdgf......fGDB0ceWadfg
@@ -127,7 +131,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $kid = $option['kid']; //12345
     $finalizeUrl = $option['finalize']; //https://~.api.letsencrypt.org/acme/finalize/***/***';
     $csr = '-----BEGIN CERTIFICATE-----\nMIIEjjCCA3agAw....NjDNFu0Qg==-----END CERTIFICATE-----';
@@ -142,7 +147,7 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 - [x] Sample：
 ```php
     $cerKey = '-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----';
-    $Cert = '-----BEGIN CERTIFICATE-----\nMIIEj0CCA2agAw....Hgd7YGhghE9gj\n==-----END CERTIFICATE-----';
+    $Cert = '-----BEGIN CERTIFICATE-----\nMIIEA2agAw....HgdYhhE9gj\n==-----END CERTIFICATE-----';
     $reason = 0;
 
     $le->RevokeCert($cerKey, $cer, $reason);
@@ -152,7 +157,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $kid = 'k6789';
     $authKid = 'd12345';
 
@@ -163,7 +169,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $kid = $option['kid']; //12345
     $newAccountKey = '-----BEGIN PUBLIC KEY-----\nOIYGRjp8....ATy3ggQiyA\n-----END PUBLIC KEY----';;
 
@@ -174,7 +181,8 @@ Of course, You can go to [Packagist](https://packagist.org/packages/yakeing/php_
 
 - [x] Sample：
 ```php
-    $accountKey = $option['accountKey']; //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    //-----BEGIN PUBLIC KEY-----\nMIIBIjA....NjQIDAQA\n-----END PUBLIC KEY----
+    $accountKey = $option['accountKey'];
     $kid = $option['kid']; //12345
 
     $le->DeactivatedAccount($accountKey, $kid);
