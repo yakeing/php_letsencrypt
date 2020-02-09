@@ -1,5 +1,5 @@
 # Letsencrypt
-PHP SSL for [letsencrypt](https://letsencrypt.com) ACME v2
+PHP SSL for [letsencrypt](https://letsencrypt.org) ACME v2
 
 Let’s Encrypt is a free, automated, and open certificate authority brought to you by the non-profit [Internet Security Research Group (ISRG)](https://www.abetterinternet.org).
 
