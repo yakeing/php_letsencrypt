@@ -1,3 +1,5 @@
+<div align="center"><img src="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg"/></div>
+
 # Letsencrypt
 PHP SSL for [letsencrypt](https://letsencrypt.org) ACME v2
 
