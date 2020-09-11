@@ -68,7 +68,7 @@ class php_letsencryptTest extends TestCase{
     */
     public function testAuthz(array $args){
         list($le, $accountKey, $option) = $args;
-        $jsonAuthz = $le->GetAuthorizations($accountKey, $url, $option['kid']);
+        $jsonAuthz = $le->GetAuthorizations($accountKey, $option['authorizations'], $option['kid']);
          $this->assertTrue($jsonAuthz);
         foreach ($le->body['body']['challenges'] as $value) {
             if ('http-01' == $value['type']) {
