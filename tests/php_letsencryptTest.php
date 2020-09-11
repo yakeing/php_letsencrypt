@@ -70,7 +70,7 @@ class php_letsencryptTest extends TestCase{
         list($le, $accountKey, $option) = $args;
         $jsonAuthz = $le->GetAuthorizations($accountKey, $option['authorizations'], $option['kid']);
          $this->assertTrue($jsonAuthz);
-        foreach ($le->body['body']['challenges'] as $value) {
+        foreach ($le->body['challenges'] as $value) {
             if ('http-01' == $value['type']) {
                 $option['status'] = $value['status']; // valid
                 $option['url'] = $value['url'];
