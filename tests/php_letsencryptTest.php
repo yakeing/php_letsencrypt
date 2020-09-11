@@ -94,9 +94,6 @@ class php_letsencryptTest extends TestCase{
             $url = $option['url']; //$authz[0]['challenges']['url'] (http-01)
             $token = $option['token']; //$authz[0]['challenges']['token'] (http-01)
             $Challenge = $le->Challenge($accountKey, $option['kid'], $url, $token);
-        
-	var_dump($Challenge);
-        
             $this->assertTrue($Challenge);
             $option['status'] = $le->body['status']; // valid
         //}
