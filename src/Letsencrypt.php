@@ -2,7 +2,7 @@
 /**
         * PHP SSL for letsencrypt.com  acme v02
         * @author http://weibo.com/yakeing
-        * @version 3.0
+        * @version 3.1
         * note: Must support CURL and Openssl
         * note: Account Key Must be RSA 2048 | 4096 or ECDSA P-256 | P-384 Digital certificate
         * https://acme-staging-v02.api.letsencrypt.org staging
@@ -100,6 +100,13 @@ class Letsencrypt{
         $this->body['sign'] = $this->PrivkeySign($keyId);
         return true;
     } //END newOrder
+
+    //Get authorizations body
+    public function GetAuthorizations($accountKey, $url, $kid){
+        $keyId = $this->GetKeyId($accountKey);
+        $ret = $this->SignMessagehttp($keyId, $url, null, $kid);
+        return $ret;
+    } //END GetAuthorizations
 
     //Get DNS Record value
     //dns-01 TXT value
@@ -421,7 +428,7 @@ class Letsencrypt{
 
     // Sign Message transfer data
     private function SignMessagehttp($keyId, $url, $payload, $kid=false, $outRequest=false){
-        if(strrpos(strtolower($url), 'http') !== 0){
+        if(stripos($url, 'http') !== 0){
             $url = $this->url.'/acme/'.$url;
         }
         $protected =  array('url' => $url);
@@ -446,9 +453,13 @@ class Letsencrypt{
         //$protected = array('nonce' => $nonce);
         //$header = array('alg' => $alg, 'jwk' => $jwk);
         //PHP 5.4 version str_replace('\\/', '/',  json_encode($payload));
-        ksort($payload);
+        if(is_array($payload)) {
+            ksort($payload);
+            $payload64 = $this->Base64Url(json_encode($payload, JSON_UNESCAPED_SLASHES));
+        }else{
+            $payload64 = '';
+        }
         ksort($protected);
-        $payload64 = $this->Base64Url(json_encode($payload, JSON_UNESCAPED_SLASHES));
         $protected64 = $this->Base64Url(json_encode($protected, JSON_UNESCAPED_SLASHES));
         $sign = $this->SignMessage($keyId, $protected64.'.'.$payload64, $kty);
         $requestData = array(
@@ -461,8 +472,8 @@ class Letsencrypt{
             echo "\n\n----------------- POST Raw data : --------------------\n";
             $Data = array(
                 //'header' => $header,
-                'protected' => $payload,
-                'payload' => $protected,
+                'protected' => $protected,
+                'payload' => $payload,
                 'signature' => $sign
             );
             print_r($Data);
