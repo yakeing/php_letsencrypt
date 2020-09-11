@@ -131,22 +131,19 @@ class Letsencrypt{
         $ret = $this->SignMessagehttp($keyId, $url,
                 array( 'keyAuthorization' => $token.'.'.$sign)
         , $kid);
+        $this->body = json_decode($ret['body'], true);
         if($ret['code'] != 200){
-                $this->body = $ret['body'];
-                return false;
+            return false;
         }
-     $body = json_decode($ret['body'], true);
-     if($body['status'] == 'valid'){
-            $this->body =$body;
-         return true;
-     }
+        if($this->body['status'] == 'valid'){
+            return true;
+        }
         for($i=0; $i<=5; ++$i){
-            $ret = $this->Http($url);
-            if($ret === false) return false;
+            $ret = $this->SignMessagehttp($keyId, $url, null, $kid);
             $challengeBody = json_decode($ret['body'], true);
             //Verification failed
-            if(!isset($challengeBody['status']) || $challengeBody['status'] == 'invalid'){
-                $this->body = $challengeBody['error'];
+            if(($ret === false) || !isset($challengeBody['status']) || $challengeBody['status'] == 'invalid'){
+                $this->body = $challengeBody;
                 return false;
             }
             //Waiting for verification
