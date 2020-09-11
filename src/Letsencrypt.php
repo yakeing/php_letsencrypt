@@ -105,7 +105,11 @@ class Letsencrypt{
     public function GetAuthorizations($accountKey, $url, $kid){
         $keyId = $this->GetKeyId($accountKey);
         $ret = $this->SignMessagehttp($keyId, $url, null, $kid);
-        return $ret;
+        $this->body = json_decode($ret['body'], true);
+        if($ret['code'] != 200){
+            return false;
+        }
+        return true;
     } //END GetAuthorizations
 
     //Get DNS Record value
