@@ -2,7 +2,7 @@
 /**
         * PHP SSL for letsencrypt.com  acme v02
         * @author http://weibo.com/yakeing
-        * @version 3.1
+        * @version 3.1.1
         * note: Must support CURL and Openssl
         * note: Account Key Must be RSA 2048 | 4096 or ECDSA P-256 | P-384 Digital certificate
         * https://acme-staging-v02.api.letsencrypt.org staging
@@ -178,7 +178,7 @@ class Letsencrypt{
             $this->body = $finalizeBody;
             return true;
         }
-        $cert = $this->Http($finalizeBody['certificate']);
+        $cert = $this->SignMessagehttp($keyId, $finalizeBody['certificate'], null, $kid);
         $this->body = $cert['body'];
         if($cert['code'] != 200){
             return false;
