@@ -306,7 +306,7 @@ class Letsencrypt{
             print_r($header);
             echo "\n\nreturn:\n";
             print_r($response);
-            echo "\n---------NED------------\n";
+            echo "\n---------END------------\n";
         }
         if(preg_match('/^Replay-Nonce:\s?(.*?)\r\n/sm', $header, $newNonce)){
             $this->nonce = $newNonce[1];
@@ -490,7 +490,6 @@ class Letsencrypt{
     public function __destruct(){
         foreach($this->keyIdentifier as $key){
             openssl_free_key($key);
-            $this->nonce = 0;
         }
     } //END __destruct
 }
