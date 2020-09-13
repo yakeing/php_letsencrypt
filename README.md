@@ -11,7 +11,7 @@ Supporting RSA ECC
 
 ### Travis CI badge
 
-[![Travis-ci](https://api.travis-ci.com/yakeing/php_letsencrypt.svg)](https://travis-ci.com/yakeing/php_letsencrypt)
+[![Travis-ci](https://api.travis-ci.com/yakeing/php_letsencrypt.svg?branch=master&status=passed)](https://travis-ci.com/yakeing/php_letsencrypt)
 
 ### codecov badge
 
