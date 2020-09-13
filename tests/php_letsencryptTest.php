@@ -94,7 +94,6 @@ class php_letsencryptTest extends TestCase{
             $option['status'] = $le->body['status']; // valid
         //}
         $this->assertEquals('valid', $option['status']);
-        +
         return array($le, $accountKey, $option);
     }
 
