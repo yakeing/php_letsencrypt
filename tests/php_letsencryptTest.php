@@ -52,10 +52,6 @@ class php_letsencryptTest extends TestCase{
     public function testNewOrder(array $args){
         list($le, $accountKey, $option) = $args;
         $type = 'dns';
-        $le->develop = true;
-        $NewOrder_Multiple = $le->NewOrder($accountKey, array($option['domain']), $option['kid'], $type);
-        $le->develop = false;
-        $this->assertTrue($NewOrder_Multiple);
         $NewOrder = $le->NewOrder($accountKey, $option['domain'], $option['kid'], $type);
         $this->assertTrue($NewOrder);
         $option['authorizations'] = $le->body['authorizations'][0];
@@ -70,8 +66,8 @@ class php_letsencryptTest extends TestCase{
         list($le, $accountKey, $option) = $args;
         $jsonAuthz = $le->GetAuthorizations($accountKey, $option['authorizations'], $option['kid']);
          $this->assertTrue($jsonAuthz);
-        foreach ($le->body['challenges'] as $value) {
-            if ('http-01' == $value['type']) {
+        foreach ($le->body['challenges'] as $value){
+            if ('http-01' == $value['type']){
                 $option['status'] = $value['status']; // valid
                 $option['url'] = $value['url'];
                 $option['token'] = $value['token'];
@@ -98,6 +94,7 @@ class php_letsencryptTest extends TestCase{
             $option['status'] = $le->body['status']; // valid
         //}
         $this->assertEquals('valid', $option['status']);
+        +
         return array($le, $accountKey, $option);
     }
 
@@ -136,7 +133,7 @@ class php_letsencryptTest extends TestCase{
         $csrKey = file_get_contents($option['csrKey']);
         $RevokeCert = $le->RevokeCert($csrKey, $option['Cert'], 5);
         $this->assertTrue($RevokeCert);
-        $le->__destruct();
+        //$le->__destruct();
         return array($le, $accountKey, $option);
     }
   
