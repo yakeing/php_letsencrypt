@@ -11,11 +11,11 @@ Supporting RSA ECC
 
 ### Travis CI badge
 
-[![Travis-ci](https://api.travis-ci.com/yakeing/php_letsencrypt.svg?branch=master&status=passed)](https://travis-ci.com/yakeing/php_letsencrypt)
+[![Travis-ci](https://api.travis-ci.com/yakeing/php_letsencrypt.svg?branch=main)](https://travis-ci.com/yakeing/php_letsencrypt)
 
 ### codecov badge
 
-[![codecov](https://codecov.io/gh/yakeing/php_letsencrypt/branch/master/graph/badge.svg)](https://codecov.io/gh/yakeing/php_letsencrypt)
+[![codecov](https://codecov.io/gh/yakeing/php_letsencrypt/branch/main/graph/badge.svg)](https://codecov.io/gh/yakeing/php_letsencrypt)
 
 ### Packagist badge
 
